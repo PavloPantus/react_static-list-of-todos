@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import User from './User';
 
 const Todoitem = (props) => {
@@ -17,10 +17,15 @@ const Todoitem = (props) => {
   );
 };
 
+Todoitem.propTypes = { todo: PropTypes.objectOf(PropTypes.any) };
+
 Todoitem.defaultProps = {
-  id: 'id not found',
-  title: 'title not found',
-  completed: 'completed status undefined',
+  todo: {
+    id: 'no id',
+    title: 'no-title',
+    completed: 'no completed',
+    user: 'no user',
+  },
 };
 
 export default Todoitem;

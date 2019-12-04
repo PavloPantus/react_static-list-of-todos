@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <h1>Static list of todos</h1>
-      {TodoList(getTodosWithUsers(todos, users))}
+      <TodoList todos={getTodosWithUsers(todos, users)} />
     </div>
   );
 }

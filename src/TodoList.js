@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Todoitem from './TodoItem';
 
-const TodoList = todos => (
+const TodoList = ({ todos }) => (
   <table className="App-table">
     <thead className="App-table-head">
       <tr>
@@ -18,5 +19,9 @@ const TodoList = todos => (
     </tbody>
   </table>
 );
+
+TodoList.propTypes = { todos: PropTypes.arrayOf(PropTypes.any) };
+
+TodoList.defaultProps = { todos: [] };
 
 export default TodoList;

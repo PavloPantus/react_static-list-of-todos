@@ -1,10 +1,12 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const User = ({ user }) => (
   <td>{user.name}</td>
 );
 
-User.defaultProps = { name: 'name not found' };
+User.propTypes = { user: PropTypes.objectOf(PropTypes.any) };
+
+User.defaultProps = { user: { name: 'name not found' } };
 
 export default User;
